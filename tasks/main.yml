@@ -1,0 +1,15 @@
+---
+# List previous backups
+
+- asserts: 
+    that: backup_dir is defined
+- stat: path={{backup_dir}} get_checksum=false get_md5=false
+  register: backup_dir_stat
+- name: Check if backup dir exist
+  assert:
+    that: src_file_stat.stat.exists and src_file_stat.stat.isdir
+
+- name: List previous backups
+  shell: "cd {{backup_dir}};ls -dtr *"
+  register: dirs
+- debug: dirs.stdout_lines    

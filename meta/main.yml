@@ -1,0 +1,19 @@
+---
+galaxy_info:
+  author: quekky
+  description: List previous backups
+  company: 
+
+  #issue_tracker_url: https://
+  license: MIT
+  min_ansible_version: 1.5
+
+  platforms:
+  - name: EL
+    versions:
+      - all
+
+  galaxy_tags:
+  - system
+
+dependencies: []
