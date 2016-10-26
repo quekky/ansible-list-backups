@@ -12,4 +12,4 @@
 - name: List previous backups
   shell: "cd {{backup_dir}};ls -dtr *"
   register: dirs
-- debug: dirs.stdout_lines    
+- debug: var=dirs.stdout_lines    
