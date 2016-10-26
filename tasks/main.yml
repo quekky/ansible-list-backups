@@ -7,7 +7,7 @@
   register: backup_dir_stat
 - name: Check if backup dir exist
   assert:
-    that: src_file_stat.stat.exists and src_file_stat.stat.isdir
+    that: backup_dir_stat.stat.exists and backup_dir_stat.stat.isdir
 
 - name: List previous backups
   shell: "cd {{backup_dir}};ls -dtr *"
